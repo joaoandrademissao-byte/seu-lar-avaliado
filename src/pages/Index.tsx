@@ -1,4 +1,4 @@
-{/*
+/*
   =============================================
   CHECKLIST DE PUBLICAÇÃO
   =============================================
@@ -27,7 +27,7 @@
   4. "Engenheiro Civil com CREA ativo"
   5. "Sem burocracia · Atendimento humanizado"
   6. "Metodologia técnica · Laudo com ART"
-*/}
+*/
 
 import TopBar from "@/components/landing/TopBar";
 import Hero from "@/components/landing/Hero";
