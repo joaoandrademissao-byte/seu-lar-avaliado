@@ -10,7 +10,7 @@ export const siteConfig = {
   crea: "[CREA]",
   cidade: "[CIDADE]",
   regiao: "[REGIÃO/RAIO]",
-  prazo: "[PRAZO]",
+  prazo: "14 dias",
   email: "contato@[DOMINIO].com.br",
   whatsapp: "5517999999999", // Número com DDI+DDD, sem espaços
 
