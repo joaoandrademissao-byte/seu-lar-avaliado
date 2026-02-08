@@ -20,12 +20,12 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-muted py-16 md:py-24">
+    <section className="bg-secondary py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
+        <h2 className="mb-4 text-center text-3xl font-bold text-secondary-foreground md:text-4xl">
           O que nossos clientes dizem
         </h2>
-        <p className="mx-auto mb-2 max-w-2xl text-center text-muted-foreground">
+        <p className="mx-auto mb-2 max-w-2xl text-center text-secondary-foreground/70">
           Histórias reais de quem já utilizou nosso serviço de avaliação.
         </p>
         <p className="mx-auto mb-12 text-center">
@@ -37,21 +37,21 @@ const Testimonials = () => {
           {testimonials.map(({ name, context, text }) => (
             <div
               key={name}
-              className="rounded-xl border border-border bg-card p-6 shadow-sm"
+              className="rounded-xl border border-secondary-foreground/10 bg-secondary-foreground/5 p-6"
             >
               <div className="mb-4 flex gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={16} className="fill-accent text-accent" />
                 ))}
               </div>
-              <p className="mb-4 text-sm leading-relaxed text-foreground italic">"{text}"</p>
+              <p className="mb-4 text-sm leading-relaxed text-secondary-foreground/90 italic">"{text}"</p>
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <span className="text-sm font-bold text-primary">{name[0]}</span>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/20">
+                  <span className="text-sm font-bold text-accent">{name[0]}</span>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{name}</p>
-                  <p className="text-xs text-muted-foreground">{context}</p>
+                  <p className="text-sm font-semibold text-secondary-foreground">{name}</p>
+                  <p className="text-xs text-secondary-foreground/60">{context}</p>
                 </div>
               </div>
             </div>

@@ -9,19 +9,19 @@ const indicators = [
 
 const SocialProof = () => {
   return (
-    <section className="bg-background py-12 md:py-16">
+    <section className="bg-primary py-12 md:py-16">
       <div className="container mx-auto grid gap-4 px-4 md:grid-cols-3">
         {indicators.map(({ icon: Icon, title, description }) => (
           <div
             key={title}
-            className="flex items-start gap-4 rounded-xl border border-border bg-card p-6 shadow-sm"
+            className="flex items-start gap-4 rounded-xl border border-primary-foreground/10 bg-primary-foreground/10 p-6 backdrop-blur"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <Icon size={24} className="text-primary" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-foreground/20">
+              <Icon size={24} className="text-primary-foreground" />
             </div>
             <div>
-              <h3 className="font-bold text-foreground">{title}</h3>
-              <p className="text-sm text-muted-foreground">{description}</p>
+              <h3 className="font-bold text-primary-foreground">{title}</h3>
+              <p className="text-sm text-primary-foreground/70">{description}</p>
             </div>
           </div>
         ))}
