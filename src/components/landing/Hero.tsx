@@ -1,6 +1,6 @@
 import { MessageCircle, Shield, Award, Lock, BookOpen } from "lucide-react";
 import { siteConfig, defaultWhatsappLink } from "@/config/siteConfig";
-import heroImage from "@/assets/hero-avaliacao.jpg";
+import heroImage from "@/assets/hero-engineer.jpg";
 
 const badges = [
   { icon: Award, label: "Engenheiro Civil" },

@@ -35,6 +35,7 @@ import SocialProof from "@/components/landing/SocialProof";
 import ForWhom from "@/components/landing/ForWhom";
 import Deliverables from "@/components/landing/Deliverables";
 import HowItWorks from "@/components/landing/HowItWorks";
+import StatisticalMethod from "@/components/landing/StatisticalMethod";
 import WhyItMatters from "@/components/landing/WhyItMatters";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
@@ -51,6 +52,7 @@ const Index = () => {
       <ForWhom />
       <Deliverables />
       <HowItWorks />
+      <StatisticalMethod />
       <WhyItMatters />
       <Testimonials />
       <FAQ />
