@@ -18,7 +18,7 @@ const risks = [
 
 const WhyItMatters = () => {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-[hsl(209,60%,96%)] py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
           Por que a avaliação técnica vale a pena

@@ -36,6 +36,12 @@
 
     --radius: 0.75rem;
 
+    --section-alt: 209 60% 96%;
+    --section-dark: 222 47% 11%;
+    --section-dark-foreground: 210 40% 98%;
+    --section-blue: 209 88% 36%;
+    --section-blue-foreground: 0 0% 100%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;

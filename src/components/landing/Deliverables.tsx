@@ -10,25 +10,25 @@ const items = [
 
 const Deliverables = () => {
   return (
-    <section id="entregaveis" className="bg-background py-16 md:py-24">
+    <section id="entregaveis" className="bg-secondary py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
+        <h2 className="mb-4 text-center text-3xl font-bold text-secondary-foreground md:text-4xl">
           O que você recebe
         </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
+        <p className="mx-auto mb-12 max-w-2xl text-center text-secondary-foreground/70">
           Cada avaliação inclui um pacote completo de documentos com validade técnica e jurídica.
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="rounded-xl border border-border bg-card p-6 shadow-sm"
+              className="rounded-xl border border-secondary-foreground/10 bg-secondary-foreground/5 p-6"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/20">
                 <Icon size={24} className="text-accent" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-foreground">{title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
+              <h3 className="mb-2 text-lg font-bold text-secondary-foreground">{title}</h3>
+              <p className="text-sm leading-relaxed text-secondary-foreground/70">{description}</p>
             </div>
           ))}
         </div>
