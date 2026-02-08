@@ -1,12 +1,12 @@
-import { MessageCircle, Shield, Award, Lock, BookOpen } from "lucide-react";
+import { MessageCircle, Shield, Award, Lock, BookOpen, Home, Zap, HandshakeIcon } from "lucide-react";
 import { siteConfig, defaultWhatsappLink } from "@/config/siteConfig";
 import heroImage from "@/assets/hero-engineer.jpg";
 
 const badges = [
-  { icon: Award, label: "Engenheiro Civil" },
-  { icon: Shield, label: "CREA Ativo" },
-  { icon: Lock, label: "Sigilo Total" },
-  { icon: BookOpen, label: "Metodologia Técnica" },
+  { icon: Award, label: `CREA — ${siteConfig.crea}` },
+  { icon: Home, label: `CRECI — ${siteConfig.creci}` },
+  { icon: Zap, label: "Resposta Rápida" },
+  { icon: HandshakeIcon, label: "Sem Compromisso" },
 ];
 
 const Hero = () => {
@@ -24,13 +24,13 @@ const Hero = () => {
 
       <div className="container relative mx-auto px-4">
         <div className="max-w-3xl">
-          <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
+           <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
             Saiba o valor real do seu imóvel{" "}
-            <span className="text-accent">— com laudo técnico de Engenheiro Civil</span>
+            <span className="text-accent">— com quem é Engenheiro Civil e Corretor de Imóveis</span>
           </h1>
 
           <p className="mb-6 text-lg text-primary-foreground/80 md:text-xl">
-            Avaliação imobiliária com rigor técnico, normas da ABNT e responsabilidade profissional.
+            Avaliação imobiliária com rigor técnico, visão de mercado e experiência prática em negociações. Quem conhece o mercado por dentro avalia com mais precisão.
           </p>
 
           <ul className="mb-8 space-y-2 text-primary-foreground/90">
@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
 
           <p className="mb-8 text-sm text-primary-foreground/60">
-            Resposta rápida · Sem compromisso
+            Engenheiro Civil + Corretor de Imóveis · Visão técnica e de mercado
           </p>
 
           {/* Badges */}

@@ -8,6 +8,7 @@
 export const siteConfig = {
   nome: "João Victor Andrade Missão",
   crea: "[CREA]",
+  creci: "[CRECI]",
   cidade: "São José do Rio Preto",
   regiao: "São José do Rio Preto e região",
   prazo: "14 dias",
