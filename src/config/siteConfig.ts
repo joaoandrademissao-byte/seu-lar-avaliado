@@ -11,7 +11,7 @@ export const siteConfig = {
   cidade: "São José do Rio Preto",
   regiao: "São José do Rio Preto e região",
   prazo: "14 dias",
-  email: "contato@jvmissao.com.br",
+  email: "joaoandrademissao@gmail.com",
   whatsapp: "5514996681221",
 
   /** Mensagens pré-preenchidas para WhatsApp */

@@ -12,14 +12,14 @@ const badges = [
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-secondary pt-24 pb-16 md:pt-32 md:pb-24">
-      {/* Background image overlay */}
+      {/* Background hero image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Engenheiro civil realizando avaliação de imóvel urbano com tablet"
-          className="h-full w-full object-cover opacity-20"
+          className="h-full w-full object-cover object-top opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/95 to-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/60" />
       </div>
 
       <div className="container relative mx-auto px-4">
