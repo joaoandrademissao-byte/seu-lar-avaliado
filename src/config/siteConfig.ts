@@ -6,22 +6,22 @@
  */
 
 export const siteConfig = {
-  nome: "[NOME]",
+  nome: "João Victor Andrade Missão",
   crea: "[CREA]",
-  cidade: "[CIDADE]",
+  cidade: "São José do Rio Preto",
   regiao: "São José do Rio Preto e região",
   prazo: "14 dias",
-  email: "contato@[DOMINIO].com.br",
-  whatsapp: "5517999999999", // Número com DDI+DDD, sem espaços
+  email: "contato@jvmissao.com.br",
+  whatsapp: "5514996681221",
 
   /** Mensagens pré-preenchidas para WhatsApp */
   mensagens: {
-    geral: (cidade: string) =>
-      `Olá! Quero uma avaliação do meu imóvel em ${cidade}. Pode me passar prazo e o que preciso enviar?`,
+    geral: () =>
+      `Vim pelo site e quero fazer uma avaliação de meu imóvel`,
     vendaCompra: () =>
-      `Olá! Vou vender/comprar um imóvel e quero saber o valor justo. Como funciona sua avaliação?`,
-    inventario: (regiao: string) =>
-      `Olá! Preciso de avaliação para inventário/partilha. Você atende ${regiao}?`,
+      `Vim pelo site e quero fazer uma avaliação de meu imóvel`,
+    inventario: () =>
+      `Vim pelo site e quero fazer uma avaliação de meu imóvel`,
   },
 } as const;
 
@@ -34,5 +34,5 @@ export function whatsappLink(message?: string): string {
 
 /** Link padrão (mensagem geral) */
 export function defaultWhatsappLink(): string {
-  return whatsappLink(siteConfig.mensagens.geral(siteConfig.cidade));
+  return whatsappLink(siteConfig.mensagens.geral());
 }

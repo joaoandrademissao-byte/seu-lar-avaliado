@@ -5,7 +5,7 @@ const options = [
   {
     icon: MessageCircle,
     label: "Quero avaliar meu imóvel",
-    message: siteConfig.mensagens.geral(siteConfig.cidade),
+    message: siteConfig.mensagens.geral(),
   },
   {
     icon: Phone,
@@ -15,7 +15,7 @@ const options = [
   {
     icon: FileText,
     label: "Inventário ou partilha",
-    message: siteConfig.mensagens.inventario(siteConfig.regiao),
+    message: siteConfig.mensagens.inventario(),
   },
 ];
 
