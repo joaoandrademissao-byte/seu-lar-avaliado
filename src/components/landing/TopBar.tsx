@@ -9,7 +9,7 @@ const TopBar = () => {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
             <span className="text-sm font-bold text-primary-foreground">EC</span>
           </div>
-          <span className="text-lg font-bold text-secondary">{siteConfig.nome}</span>
+          <span className="text-lg font-bold text-secondary">AVVA</span>
         </div>
         <a
           href={defaultWhatsappLink()}

@@ -6,12 +6,11 @@
  */
 
 export const siteConfig = {
-  nome: "João Victor Andrade Missão",
-  crea: "[CREA]",
-  creci: "[CRECI]",
+  nome: "AVVA - Avaliações Imobiliárias",
+  crea: "5070417349",
   cidade: "São José do Rio Preto",
   regiao: "São José do Rio Preto e região",
-  prazo: "14 dias",
+  prazo: "72 horas",
   email: "joaoandrademissao@gmail.com",
   whatsapp: "5514996681221",
 
