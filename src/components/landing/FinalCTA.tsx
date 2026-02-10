@@ -1,5 +1,6 @@
 import { MessageCircle, Phone, FileText } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const options = [
   {
@@ -20,9 +21,11 @@ const options = [
 ];
 
 const FinalCTA = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section className="bg-secondary py-16 md:py-24">
-      <div className="container mx-auto px-4 text-center">
+      <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">
           Não arrisque o valor do seu patrimônio
         </h2>
@@ -32,13 +35,14 @@ const FinalCTA = () => {
         </p>
 
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3">
-          {options.map(({ icon: Icon, label, message }) => (
+          {options.map(({ icon: Icon, label, message }, i) => (
             <a
               key={label}
               href={whatsappLink(message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-3 rounded-xl bg-accent px-6 py-5 font-semibold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+              className={`flex flex-col items-center gap-3 rounded-xl bg-accent px-6 py-5 font-semibold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               <Icon size={28} />
               <span className="text-sm">{label}</span>

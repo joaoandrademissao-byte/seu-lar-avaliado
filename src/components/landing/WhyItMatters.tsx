@@ -1,4 +1,6 @@
-import { CheckCircle, XCircle } from "lucide-react";
+import { CheckCircle, XCircle, MessageCircle } from "lucide-react";
+import { defaultWhatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const benefits = [
   "Valor de mercado fundamentado em metodologia técnica",
@@ -17,9 +19,11 @@ const risks = [
 ];
 
 const WhyItMatters = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section className="bg-[hsl(209,60%,96%)] py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
           Por que a avaliação técnica vale a pena
         </h2>
@@ -27,8 +31,7 @@ const WhyItMatters = () => {
           Entenda a diferença entre um valor técnico confiável e o risco de precificar no achismo.
         </p>
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Benefits */}
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-8">
+          <div className={`rounded-xl border border-accent/30 bg-accent/5 p-8 transition-all duration-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             <h3 className="mb-6 text-xl font-bold text-foreground">
               ✅ Com avaliação técnica
             </h3>
@@ -42,8 +45,7 @@ const WhyItMatters = () => {
             </ul>
           </div>
 
-          {/* Risks */}
-          <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-8">
+          <div className={`rounded-xl border border-destructive/30 bg-destructive/5 p-8 transition-all duration-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
             <h3 className="mb-6 text-xl font-bold text-foreground">
               ⚠️ Sem avaliação — riscos reais
             </h3>
@@ -56,6 +58,17 @@ const WhyItMatters = () => {
               ))}
             </ul>
           </div>
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href={defaultWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <MessageCircle size={22} />
+            Pedir Orçamento
+          </a>
         </div>
       </div>
     </section>

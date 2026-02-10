@@ -1,4 +1,6 @@
-import { TrendingUp, Building2, ShieldCheck, BarChart3 } from "lucide-react";
+import { TrendingUp, Building2, ShieldCheck, BarChart3, MessageCircle } from "lucide-react";
+import { defaultWhatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import methodImage from "@/assets/hero-avaliacao.jpg";
 
 const banks = [
@@ -14,29 +16,27 @@ const highlights = [
   {
     icon: BarChart3,
     title: "Tratamento estatístico rigoroso",
-    description:
-      "Utiliza regressão linear múltipla para analisar variáveis como localização, área, padrão construtivo e idade do imóvel.",
+    description: "Utiliza regressão linear múltipla para analisar variáveis como localização, área, padrão construtivo e idade do imóvel.",
   },
   {
     icon: TrendingUp,
     title: "Dados reais de mercado",
-    description:
-      "Baseia-se em transações e ofertas reais da região, garantindo valores atualizados e representativos.",
+    description: "Baseia-se em transações e ofertas reais da região, garantindo valores atualizados e representativos.",
   },
   {
     icon: ShieldCheck,
     title: "Norma ABNT NBR 14.653",
-    description:
-      "Método normatizado e aceito pela Justiça, bancos e cartórios em todo o Brasil.",
+    description: "Método normatizado e aceito pela Justiça, bancos e cartórios em todo o Brasil.",
   },
 ];
 
 const StatisticalMethod = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section className="bg-muted py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* Text Content */}
           <div>
             <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
               Metodologia Científica
@@ -68,9 +68,20 @@ const StatisticalMethod = () => {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8">
+              <a
+                href={defaultWhatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+              >
+                <MessageCircle size={22} />
+                Solicitar Orçamento Grátis
+              </a>
+            </div>
           </div>
 
-          {/* Image + Banks */}
           <div>
             <div className="mb-8 overflow-hidden rounded-2xl shadow-lg">
               <img

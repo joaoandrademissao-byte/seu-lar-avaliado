@@ -1,4 +1,6 @@
-import { Star } from "lucide-react";
+import { Star, MessageCircle } from "lucide-react";
+import { defaultWhatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const testimonials = [
   {
@@ -19,9 +21,11 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section className="bg-secondary py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="mb-4 text-center text-3xl font-bold text-secondary-foreground md:text-4xl">
           O que nossos clientes dizem
         </h2>
@@ -34,10 +38,11 @@ const Testimonials = () => {
           </span>
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map(({ name, context, text }) => (
+          {testimonials.map(({ name, context, text }, i) => (
             <div
               key={name}
-              className="rounded-xl border border-secondary-foreground/10 bg-secondary-foreground/5 p-6"
+              className={`rounded-xl border border-secondary-foreground/10 bg-secondary-foreground/5 p-6 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="mb-4 flex gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -56,6 +61,17 @@ const Testimonials = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href={defaultWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <MessageCircle size={22} />
+            Falar no WhatsApp
+          </a>
         </div>
       </div>
     </section>
