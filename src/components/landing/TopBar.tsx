@@ -5,11 +5,12 @@ const TopBar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-sm font-bold text-primary-foreground">EC</span>
+        <div className="flex items-center gap-3">
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg font-bold text-secondary">AVVA</span>
+            <span className="text-[10px] font-medium tracking-wider text-muted-foreground uppercase">Avaliações Imobiliárias</span>
           </div>
-          <span className="text-lg font-bold text-secondary">AVVA</span>
+          <span className="hidden text-xs font-medium text-muted-foreground sm:inline-block border-l border-border pl-3">CREA {siteConfig.crea}</span>
         </div>
         <a
           href={defaultWhatsappLink()}
