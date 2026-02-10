@@ -4,7 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { siteConfig } from "@/config/siteConfig";
+import { MessageCircle } from "lucide-react";
+import { siteConfig, defaultWhatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const faqs = [
   {
@@ -42,9 +44,11 @@ const faqs = [
 ];
 
 const FAQ = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section id="faq" className="bg-[hsl(209,60%,96%)] py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
           Perguntas frequentes
         </h2>
@@ -68,6 +72,17 @@ const FAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href={defaultWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <MessageCircle size={22} />
+            Tire Suas Dúvidas
+          </a>
         </div>
       </div>
     </section>

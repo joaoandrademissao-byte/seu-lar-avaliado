@@ -1,4 +1,6 @@
 import { MessageCircle, Upload, ClipboardList, FileCheck } from "lucide-react";
+import { defaultWhatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const steps = [
   {
@@ -28,9 +30,11 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section id="como-funciona" className="bg-muted py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
           Como funciona
         </h2>
@@ -39,8 +43,11 @@ const HowItWorks = () => {
         </p>
         <div className="grid gap-8 md:grid-cols-4">
           {steps.map(({ icon: Icon, step, title, description }, index) => (
-            <div key={step} className="relative text-center">
-              {/* Connector line (desktop) */}
+            <div
+              key={step}
+              className={`relative text-center transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
               {index < steps.length - 1 && (
                 <div className="absolute right-0 top-8 hidden h-0.5 w-full translate-x-1/2 bg-border md:block" />
               )}
@@ -54,6 +61,17 @@ const HowItWorks = () => {
               <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href={defaultWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <MessageCircle size={22} />
+            Falar com Engenheiro
+          </a>
         </div>
       </div>
     </section>

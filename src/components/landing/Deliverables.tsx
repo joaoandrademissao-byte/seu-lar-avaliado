@@ -1,4 +1,6 @@
-import { FileText, BarChart3, Calculator, Camera, ClipboardCheck } from "lucide-react";
+import { FileText, BarChart3, Calculator, Camera, ClipboardCheck, MessageCircle } from "lucide-react";
+import { defaultWhatsappLink } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const items = [
   { icon: FileText, title: "Laudo técnico completo", description: "Documento detalhado com valor de mercado fundamentado em normas técnicas da ABNT." },
@@ -9,9 +11,11 @@ const items = [
 ];
 
 const Deliverables = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section id="entregaveis" className="bg-secondary py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="mb-4 text-center text-3xl font-bold text-secondary-foreground md:text-4xl">
           O que você recebe
         </h2>
@@ -19,10 +23,11 @@ const Deliverables = () => {
           Cada avaliação inclui um pacote completo de documentos com validade técnica e jurídica.
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map(({ icon: Icon, title, description }) => (
+          {items.map(({ icon: Icon, title, description }, i) => (
             <div
               key={title}
-              className="rounded-xl border border-secondary-foreground/10 bg-secondary-foreground/5 p-6"
+              className={`rounded-xl border border-secondary-foreground/10 bg-secondary-foreground/5 p-6 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/20">
                 <Icon size={24} className="text-accent" />
@@ -31,6 +36,17 @@ const Deliverables = () => {
               <p className="text-sm leading-relaxed text-secondary-foreground/70">{description}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href={defaultWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <MessageCircle size={22} />
+            Quero Meu Laudo
+          </a>
         </div>
       </div>
     </section>
