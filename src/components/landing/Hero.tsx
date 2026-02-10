@@ -1,10 +1,9 @@
-import { MessageCircle, Shield, Award, Lock, BookOpen, Home, Zap, HandshakeIcon } from "lucide-react";
+import { MessageCircle, Shield, Award, Lock, BookOpen, Zap, HandshakeIcon } from "lucide-react";
 import { siteConfig, defaultWhatsappLink } from "@/config/siteConfig";
 import heroImage from "@/assets/hero-engineer.jpg";
 
 const badges = [
   { icon: Award, label: `CREA — ${siteConfig.crea}` },
-  { icon: Home, label: `CRECI — ${siteConfig.creci}` },
   { icon: Zap, label: "Resposta Rápida" },
   { icon: HandshakeIcon, label: "Sem Compromisso" },
 ];
@@ -26,11 +25,11 @@ const Hero = () => {
         <div className="max-w-3xl">
            <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
             Saiba o valor real do seu imóvel{" "}
-            <span className="text-accent">— com quem é Engenheiro Civil e Corretor de Imóveis</span>
+            <span className="text-accent">— com rigor técnico de Engenheiro Civil</span>
           </h1>
 
           <p className="mb-6 text-lg text-primary-foreground/80 md:text-xl">
-            Avaliação imobiliária com rigor técnico, visão de mercado e experiência prática em negociações. Quem conhece o mercado por dentro avalia com mais precisão.
+            Avaliação imobiliária com rigor técnico e metodologia normatizada. Laudos entregues com agilidade e precisão.
           </p>
 
           <ul className="mb-8 space-y-2 text-primary-foreground/90">
@@ -61,7 +60,7 @@ const Hero = () => {
           </div>
 
           <p className="mb-8 text-sm text-primary-foreground/60">
-            Engenheiro Civil + Corretor de Imóveis · Visão técnica e de mercado
+            Engenheiro Civil · CREA {siteConfig.crea}
           </p>
 
           {/* Badges */}

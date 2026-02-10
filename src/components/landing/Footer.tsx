@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <h3 className="mb-2 text-lg font-bold text-foreground">{siteConfig.nome}</h3>
-            <p className="text-sm text-muted-foreground">Engenheiro Civil — {siteConfig.crea} · Corretor — {siteConfig.creci}</p>
+            <p className="text-sm text-muted-foreground">Engenheiro Civil — CREA {siteConfig.crea}</p>
             <p className="text-sm text-muted-foreground">{siteConfig.cidade}</p>
             <p className="text-sm text-muted-foreground">{siteConfig.email}</p>
           </div>
