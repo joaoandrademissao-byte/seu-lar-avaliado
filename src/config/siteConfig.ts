@@ -6,11 +6,11 @@
  */
 
 export const siteConfig = {
-  nome: "AVVA - Avaliações Imobiliárias",
+  nome: "Andrade Missão Engenharia - Avaliação Imobiliárias",
   crea: "5070417349",
   cidade: "São José do Rio Preto",
   regiao: "São José do Rio Preto e região",
-  prazo: "72 horas",
+  prazo: "72 horas após a vistoria do imóvel",
   
   whatsapp: "5514996681221",
 

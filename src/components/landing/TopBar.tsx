@@ -7,8 +7,8 @@ const TopBar = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
           <div className="flex flex-col leading-tight">
-            <span className="text-lg font-bold text-secondary">AVVA</span>
-            <span className="text-[10px] font-medium tracking-wider text-muted-foreground uppercase">Avaliações Imobiliárias</span>
+            <span className="text-lg font-bold text-secondary">Andrade Missão</span>
+            <span className="text-[10px] font-medium tracking-wider text-muted-foreground uppercase">Avaliação Imobiliárias</span>
           </div>
           <span className="hidden text-xs font-medium text-muted-foreground sm:inline-block border-l border-border pl-3">CREA {siteConfig.crea}</span>
         </div>
