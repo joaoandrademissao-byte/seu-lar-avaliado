@@ -9,7 +9,6 @@ const Footer = () => {
             <h3 className="mb-2 text-lg font-bold text-foreground">{siteConfig.nome}</h3>
             <p className="text-sm text-muted-foreground">Engenheiro Civil — CREA {siteConfig.crea}</p>
             <p className="text-sm text-muted-foreground">{siteConfig.cidade}</p>
-            <p className="text-sm text-muted-foreground">WhatsApp: ({siteConfig.whatsapp.slice(2, 4)}) {siteConfig.whatsapp.slice(4, 9)}-{siteConfig.whatsapp.slice(9)}</p>
           </div>
           <div>
             <h4 className="mb-2 font-semibold text-foreground">Links</h4>
