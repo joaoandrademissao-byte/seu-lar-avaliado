@@ -83,13 +83,17 @@ const Hero = () => {
           {/* Right — Hero photo */}
           <div className="hidden flex-shrink-0 lg:block">
             <div className="relative">
-              {/* Decorative accent ring */}
-              <div className="absolute -inset-3 rounded-full bg-accent/20 blur-2xl" />
+              {/* Decorative glow */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-accent/30 via-accent/10 to-transparent blur-3xl" />
+              {/* Decorative border frame */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/40 via-primary-foreground/20 to-accent/10" />
               <img
                 src={heroPhoto}
                 alt="Engenheiro Civil - Andrade Missão Engenharia"
-                className="relative z-10 h-[480px] w-[380px] rounded-2xl object-cover object-top shadow-2xl ring-4 ring-primary-foreground/10"
+                className="relative z-10 h-[480px] w-[380px] rounded-2xl object-cover object-top shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]"
               />
+              {/* Bottom accent bar */}
+              <div className="absolute -bottom-3 left-1/2 z-20 h-1.5 w-3/4 -translate-x-1/2 rounded-full bg-accent/60 blur-sm" />
             </div>
           </div>
         </div>
