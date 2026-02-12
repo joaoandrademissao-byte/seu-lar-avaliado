@@ -1,7 +1,7 @@
 import { TrendingUp, Building2, ShieldCheck, BarChart3, MessageCircle } from "lucide-react";
 import { defaultWhatsappLink } from "@/config/siteConfig";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import methodImage from "@/assets/hero-engineer.jpg";
+import methodImage from "@/assets/engineer-evaluating.jpg";
 
 const banks = [
   "Caixa Econômica Federal",
