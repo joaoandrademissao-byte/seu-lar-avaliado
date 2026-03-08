@@ -30,10 +30,9 @@ jobs:
           node-version: 20
           cache: 'npm'
       
-      # 3. Instala as dependencias
-      # (Usar 'npm ci' e mais rapido e seguro para CI)
+      # 3. Instala as dependências (evita falha por lockfile fora de sincronia)
       - name: "Instalar Dependencias"
-        run: npm ci
+        run: npm install --no-audit --no-fund
       
       # 4. Roda o script de build (que deve gerar a pasta 'dist')
       - name: "Rodar Build"
