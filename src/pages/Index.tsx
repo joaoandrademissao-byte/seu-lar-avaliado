@@ -54,7 +54,7 @@ const Index = () => {
       <HowItWorks />
       <StatisticalMethod />
       <WhyItMatters />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQ />
       <FinalCTA />
       <Footer />
