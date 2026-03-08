@@ -1,4 +1,4 @@
-import { MessageCircle, Award, Zap, HandshakeIcon } from "lucide-react";
+import { Award, Zap, HandshakeIcon } from "lucide-react";
 import { siteConfig, defaultWhatsappLink } from "@/config/siteConfig";
 import heroBackground from "@/assets/hero-engineer.jpg";
 import heroPhoto from "@/assets/hero-property-evaluation.jpg";
