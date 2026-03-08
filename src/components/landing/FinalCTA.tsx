@@ -21,20 +21,16 @@ const FinalCTA = () => {
           Fale com um Engenheiro Civil agora.
         </p>
 
-        <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3">
-          {options.map(({ icon: Icon, label, message }, i) => (
-            <a
-              key={label}
-              href={whatsappLink(message)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex flex-col items-center gap-3 rounded-xl bg-accent px-6 py-5 font-semibold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <Icon size={28} />
-              <span className="text-sm">{label}</span>
-            </a>
-          ))}
+        <div className={`inline-flex transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+          <a
+            href={defaultWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 rounded-xl bg-accent px-8 py-5 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <WhatsAppIcon size={28} />
+            Solicitar Avaliação
+          </a>
         </div>
 
         <p className="mt-6 text-sm text-primary-foreground/50">

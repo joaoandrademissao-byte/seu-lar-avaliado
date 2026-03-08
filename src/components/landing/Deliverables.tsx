@@ -50,8 +50,8 @@ const Deliverables = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
           >
-            <MessageCircle size={22} />
-            Quero Meu Laudo
+            <WhatsAppIcon size={22} />
+            Solicitar Avaliação
           </a>
         </div>
       </div>
