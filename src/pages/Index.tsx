@@ -37,7 +37,7 @@ import Deliverables from "@/components/landing/Deliverables";
 import HowItWorks from "@/components/landing/HowItWorks";
 import StatisticalMethod from "@/components/landing/StatisticalMethod";
 import WhyItMatters from "@/components/landing/WhyItMatters";
-import Testimonials from "@/components/landing/Testimonials";
+// import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
