@@ -1,6 +1,24 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
+
+const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 32 32" width={size} height={size} fill="currentColor">
+    <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.129 6.745 3.047 9.379L1.054 31.49l6.311-2.022A15.89 15.89 0 0 0 16.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0Zm9.335 22.594c-.39 1.1-1.932 2.013-3.175 2.28-.852.18-1.964.324-5.709-1.227-4.795-1.986-7.882-6.853-8.12-7.172-.23-.319-1.927-2.567-1.927-4.894s1.22-3.472 1.653-3.948c.39-.432 1.036-.648 1.654-.648.2 0 .38.01.541.019.433.019.65.043.936.722.358.852 1.228 2.994 1.336 3.213.11.219.219.516.068.816-.143.308-.268.497-.487.764-.219.267-.428.472-.647.759-.2.248-.424.515-.176.948.248.432 1.104 1.82 2.37 2.948 1.631 1.452 3.004 1.904 3.436 2.113.432.21.685.176.936-.105.26-.29 1.104-1.285 1.396-1.727.284-.443.576-.367.964-.22.39.148 2.472 1.167 2.896 1.38.424.218.706.324.814.504.104.181.104 1.052-.286 2.15Z" />
+  </svg>
+);
 
 const PoliticaPrivacidade = () => {
+  const navigate = useNavigate();
+  const { open } = useWhatsAppModal();
+
+  // Garante que a página abre no topo
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
+
   return (
     <div className="min-h-screen bg-secondary px-4 py-24">
       <div className="container mx-auto max-w-3xl">
@@ -130,6 +148,26 @@ const PoliticaPrivacidade = () => {
           </section>
 
         </div>
+
+        {/* Botões de ação */}
+        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button
+            onClick={open}
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-base font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+          >
+            <WhatsAppIcon size={20} />
+            Solicitar Avaliação
+          </button>
+
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 rounded-xl border border-primary-foreground/20 bg-primary-foreground/5 px-8 py-4 text-base font-semibold text-primary-foreground/70 transition-all hover:bg-primary-foreground/10"
+          >
+            <ArrowLeft size={18} />
+            Voltar
+          </button>
+        </div>
+
       </div>
     </div>
   );
