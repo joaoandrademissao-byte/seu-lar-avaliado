@@ -11,29 +11,24 @@ import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 import WhatsAppFloat from "@/components/landing/WhatsAppFloat";
-import WhatsAppModal from "@/components/landing/WhatsAppModal";
-import { WhatsAppModalProvider } from "@/contexts/WhatsAppModalContext";
 
 const Index = () => {
   return (
-    <WhatsAppModalProvider>
-      <main>
-        <TopBar />
-        <Hero />
-        <SocialProof />
-        <ForWhom />
-        <Deliverables />
-        <HowItWorks />
-        <StatisticalMethod />
-        <WhyItMatters />
-        {/* <Testimonials /> */}
-        <FAQ />
-        <FinalCTA />
-        <Footer />
-        <WhatsAppFloat />
-        <WhatsAppModal />
-      </main>
-    </WhatsAppModalProvider>
+    <main>
+      <TopBar />
+      <Hero />
+      <SocialProof />
+      <ForWhom />
+      <Deliverables />
+      <HowItWorks />
+      <StatisticalMethod />
+      <WhyItMatters />
+      {/* <Testimonials /> */}
+      <FAQ />
+      <FinalCTA />
+      <Footer />
+      <WhatsAppFloat />
+    </main>
   );
 };
 
