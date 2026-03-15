@@ -11,12 +11,10 @@ const WhatsAppIcon = ({ size = 24 }: { size?: number }) => (
   </svg>
 );
 
-/** Capitaliza a primeira letra de cada palavra */
 function capitalizeWords(value: string): string {
   return value.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-/** Aplica máscara de telefone: (XX) X XXXX-XXXX */
 function phoneMask(value: string): string {
   const digits = value.replace(/\D/g, "").slice(0, 11);
   if (digits.length <= 2) return digits.length ? `(${digits}` : "";
@@ -49,7 +47,6 @@ const WhatsAppModal = () => {
     }
   }, [isOpen]);
 
-  // close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
@@ -58,7 +55,6 @@ const WhatsAppModal = () => {
     return () => window.removeEventListener("keydown", handler);
   }, [isOpen, close]);
 
-  // close on backdrop click
   const handleBackdrop = (e: React.MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       close();
@@ -67,23 +63,19 @@ const WhatsAppModal = () => {
 
   const validate = (): boolean => {
     let valid = true;
-    const trimmed = name.trim();
-    const words = trimmed.split(/\s+/).filter(Boolean);
+    const words = name.trim().split(/\s+/).filter(Boolean);
     if (words.length < 2) {
       setNameError("Envie seu nome completo");
       valid = false;
     } else {
       setNameError("");
     }
-
-    const digits = extractDigits(phone);
-    if (digits.length < 11) {
+    if (extractDigits(phone).length < 11) {
       setPhoneError("Insira um número válido com DDD");
       valid = false;
     } else {
       setPhoneError("");
     }
-
     return valid;
   };
 
@@ -92,9 +84,10 @@ const WhatsAppModal = () => {
     if (!validate()) return;
 
     setSending(true);
+
     const payload = {
-      nome: name.trim(),
-      whatsapp: extractDigits(phone),
+      name: name.trim(),
+      phone: extractDigits(phone),
     };
 
     try {
@@ -102,7 +95,6 @@ const WhatsAppModal = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-        mode: "no-cors",
       });
     } catch {
       // fail silently – still redirect
@@ -124,7 +116,7 @@ const WhatsAppModal = () => {
         ref={modalRef}
         className="w-full max-w-md animate-in fade-in zoom-in-95 duration-200 rounded-2xl overflow-hidden shadow-2xl"
       >
-        {/* Header – WhatsApp style */}
+        {/* Header */}
         <div className="flex items-center gap-3 bg-[#075E54] px-5 py-4">
           <WhatsAppIcon size={28} />
           <div className="flex-1">
@@ -139,7 +131,7 @@ const WhatsAppModal = () => {
           </button>
         </div>
 
-        {/* Chat bubble area */}
+        {/* Chat bubble */}
         <div className="bg-[#ECE5DD] px-5 py-6">
           <div className="mb-4 max-w-[85%] rounded-xl rounded-tl-none bg-white px-4 py-3 shadow-sm">
             <p className="text-sm text-[#303030]">
@@ -149,7 +141,7 @@ const WhatsAppModal = () => {
           </div>
         </div>
 
-        {/* Form area */}
+        {/* Form */}
         <form onSubmit={handleSubmit} className="bg-[#F0F0F0] px-5 py-5 space-y-4">
           <div>
             <label className="mb-1 block text-xs font-semibold text-[#555]">Seu nome completo</label>
