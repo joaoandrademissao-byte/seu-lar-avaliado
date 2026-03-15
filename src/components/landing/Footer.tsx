@@ -1,4 +1,6 @@
 import { siteConfig } from "@/config/siteConfig";
+import { Link } from "react-router-dom";
+import logoCompleta from "@/assets/logo_completa_sem_bg.png";
 
 const Footer = () => {
   return (
@@ -6,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="mb-2 text-lg font-bold text-foreground">{siteConfig.nome}</h3>
+            <img src={logoCompleta} alt="Andrade Missão Engenharia" className="h-10 w-auto mb-3" />
             <p className="text-sm text-muted-foreground">Engenheiro Civil — CREA {siteConfig.crea}</p>
             <p className="text-sm text-muted-foreground">{siteConfig.cidade}</p>
           </div>
@@ -22,8 +24,11 @@ const Footer = () => {
           <div>
             <h4 className="mb-2 font-semibold text-foreground">Legal</h4>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary">Política de Privacidade</a></li>
-              <li><a href="#" className="hover:text-primary">Termos de Uso</a></li>
+              <li>
+                <Link to="/politica-de-privacidade" className="hover:text-primary">
+                  Política de Privacidade
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
