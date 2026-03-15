@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
+import Obrigado from "./pages/Obrigado";
+
+// dentro do <Routes>:
+<Route path="/obrigado" element={<Obrigado />} />
 
 const queryClient = new QueryClient();
 
