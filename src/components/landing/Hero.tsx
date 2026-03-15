@@ -1,7 +1,7 @@
 import { Award, Zap, HandshakeIcon } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 import heroBackground from "@/assets/hero-engineer.jpg";
-import heroPhoto from "@/assets/hero-property-evaluation.jpg";
+import heroPhoto from "@/assets/hero-property-evaluation.png";
 import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
