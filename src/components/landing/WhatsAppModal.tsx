@@ -169,7 +169,7 @@ const WhatsAppModal = () => {
                 setPhone(phoneMask(e.target.value));
                 if (phoneError) setPhoneError("");
               }}
-              placeholder="(14) 9 9668-1221"
+              placeholder="(17) 9 9999-9999"
               className={`w-full rounded-lg border bg-white px-4 py-3 text-sm text-[#303030] outline-none transition-colors placeholder:text-[#aaa] focus:ring-2 focus:ring-[#25D366] ${
                 phoneError ? "border-[#e74c3c]" : "border-[#ddd]"
               }`}
@@ -183,7 +183,7 @@ const WhatsAppModal = () => {
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3.5 text-base font-bold text-white shadow-md transition-all hover:bg-[#20bd5a] disabled:opacity-60"
           >
             <Send size={18} />
-            {sending ? "Enviando..." : "Quero minha avaliação gratuita"}
+            {sending ? "Enviando..." : "Solicitar orçamento agora"}
           </button>
         </form>
       </div>
