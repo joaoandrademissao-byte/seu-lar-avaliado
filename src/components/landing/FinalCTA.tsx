@@ -1,5 +1,5 @@
-import { defaultWhatsappLink } from "@/config/siteConfig";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 
 const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
   <svg viewBox="0 0 32 32" width={size} height={size} fill="currentColor">
@@ -9,33 +9,25 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 
 const FinalCTA = () => {
   const { ref, isVisible } = useScrollReveal();
+  const { open } = useWhatsAppModal();
 
   return (
     <section className="bg-secondary py-16 md:py-24">
       <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">
-          Não arrisque o valor do seu patrimônio
-        </h2>
+        <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">Não arrisque o valor do seu patrimônio</h2>
         <p className="mx-auto mb-10 max-w-2xl text-lg text-primary-foreground/80">
-          Um laudo técnico custa muito menos do que o prejuízo de uma negociação mal fundamentada.
-          Fale com um Engenheiro Civil agora.
+          Um laudo técnico custa muito menos do que o prejuízo de uma negociação mal fundamentada. Fale com um Engenheiro Civil agora.
         </p>
-
         <div className={`inline-flex transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <a
-            href={defaultWhatsappLink()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={open}
             className="flex items-center gap-3 rounded-xl bg-accent px-8 py-5 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
           >
             <WhatsAppIcon size={28} />
             Solicitar Avaliação
-          </a>
+          </button>
         </div>
-
-        <p className="mt-6 text-sm text-primary-foreground/50">
-          Atendimento rápido · Sem compromisso · Sigilo garantido
-        </p>
+        <p className="mt-6 text-sm text-primary-foreground/50">Atendimento rápido · Sem compromisso · Sigilo garantido</p>
       </div>
     </section>
   );
