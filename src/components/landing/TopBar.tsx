@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/siteConfig";
 import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
+import logoCompleta from "@/assets/logo_completa_sem_bg.png";
 
 const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
   <svg viewBox="0 0 32 32" width={size} height={size} fill="currentColor">
@@ -9,15 +10,11 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 
 const TopBar = () => {
   const { open } = useWhatsAppModal();
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <div className="flex flex-col leading-tight">
-            <span className="text-lg font-bold text-secondary">Andrade Missão</span>
-            <span className="text-[10px] font-medium tracking-wider text-muted-foreground uppercase">Avaliações Imobiliárias</span>
-          </div>
+          <img src={logoCompleta} alt="Andrade Missão Engenharia" className="h-10 w-auto" />
           <span className="hidden text-xs font-medium text-muted-foreground sm:inline-block border-l border-border pl-3">CREA {siteConfig.crea}</span>
         </div>
         <button
