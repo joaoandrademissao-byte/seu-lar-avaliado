@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { X, Send } from "lucide-react";
 import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
-import { whatsappLink } from "@/config/siteConfig";
+import { useNavigate } from "react-router-dom";
 
-const WEBHOOK_URL = "https://SEU-WEBHOOK-AQUI.com/webhook"; // TODO: substituir pela URL real
+const WEBHOOK_URL = "https://n8n.operandodigital.com.br/webhook/whatsapp-avalaicao";
 
 const WhatsAppIcon = ({ size = 24 }: { size?: number }) => (
   <svg viewBox="0 0 32 32" width={size} height={size} fill="currentColor">
@@ -31,6 +31,7 @@ function extractDigits(masked: string): string {
 
 const WhatsAppModal = () => {
   const { isOpen, close } = useWhatsAppModal();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [nameError, setNameError] = useState("");
@@ -107,11 +108,9 @@ const WhatsAppModal = () => {
       // fail silently – still redirect
     }
 
-    // Redirect to WhatsApp
-    const msg = `Olá! Meu nome é ${payload.nome}. Vim pelo site e quero fazer uma avaliação de meu imóvel.`;
-    window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
     setSending(false);
     close();
+    navigate("/obrigado");
   };
 
   if (!isOpen) return null;
@@ -192,7 +191,7 @@ const WhatsAppModal = () => {
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3.5 text-base font-bold text-white shadow-md transition-all hover:bg-[#20bd5a] disabled:opacity-60"
           >
             <Send size={18} />
-            {sending ? "Enviando..." : "Enviar e abrir WhatsApp"}
+            {sending ? "Enviando..." : "Quero minha avaliação gratuita"}
           </button>
         </form>
       </div>
