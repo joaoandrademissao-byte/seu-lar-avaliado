@@ -46,7 +46,7 @@ const Hero = () => {
           <div className="max-w-2xl flex-1 text-center lg:text-left">
             <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
               Saiba o valor real do seu imóvel{" "}
-              <span className="text-accent">— com rigor técnico de Engenheiro Civil</span>
+              <span className="text-accent">— Avaliação Imobiliária com laudo para fins comerciais e judiciais</span>
             </h1>
             <p className="mb-6 text-lg text-primary-foreground/80 md:text-xl">
               Avaliação imobiliária com rigor técnico e metodologia normatizada. Laudos entregues com agilidade e precisão.
