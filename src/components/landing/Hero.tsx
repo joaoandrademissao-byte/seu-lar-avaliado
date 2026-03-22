@@ -54,7 +54,7 @@ const Hero = () => {
             <ul className="mb-8 space-y-2 text-primary-foreground/90">
               <li className="flex items-center justify-center gap-2 lg:justify-start">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                Entrega em até<strong className="ml-1">48 horas</strong>
+                Entrega em até <strong>48 horas</strong>
               </li>
               <li className="flex items-center justify-center gap-2 lg:justify-start">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
@@ -62,7 +62,7 @@ const Hero = () => {
               </li>
               <li className="flex items-center justify-center gap-2 lg:justify-start">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                Atendimento em<strong className="ml-1">todo o Brasil</strong>
+                Atendimento em <strong>todo o Brasil</strong>
               </li>
             </ul>
             <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
