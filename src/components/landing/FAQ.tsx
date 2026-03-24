@@ -40,8 +40,8 @@ const faqs = [
     a: "Sim. Em processos de inventário e partilha, a Justiça exige ou recomenda laudo de avaliação elaborado por profissional habilitado para determinar o valor dos bens imóveis.",
   },
   {
-    q: `Vocês atendem minha região (${siteConfig.regiao})?`,
-    a: `Sim, atendemos toda a região de ${siteConfig.regiao}. Para localidades fora desta área, consulte disponibilidade pelo WhatsApp.`,
+    q: `Vocês atendem minha região?`,
+    a: `Sim, atendemos o Brasil todo`,
   },
   {
     q: "Como é feita a vistoria do imóvel?",
