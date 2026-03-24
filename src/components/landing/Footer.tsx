@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <img src={logoCompleta} alt="Andrade Missão Engenharia" className="h-10 w-auto mb-3" />
             <p className="text-sm text-muted-foreground">Engenheiro Civil — CREA {siteConfig.crea}</p>
-            <p className="text-sm text-muted-foreground">{siteConfig.cidade}</p>
+            
           </div>
           <div>
             <h4 className="mb-2 font-semibold text-foreground">Links</h4>
