@@ -3,8 +3,8 @@ import { siteConfig } from "@/config/siteConfig";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const indicators = [
-  { icon: MapPin, title: `Atendimento em ${siteConfig.regiao}`, description: "Cobertura regional completa" },
-  { icon: Clock, title: `Entrega em até ${siteConfig.prazo}`, description: "Agilidade sem perder qualidade" },
+  { icon: MapPin, title: `Atendimento no Brasil todo`, description: "Cobertura nacional completa" },
+  { icon: Clock, title: `Entrega em até 48 horas`, description: "Agilidade sem perder qualidade" },
   { icon: FileCheck, title: "Metodologia normatizada", description: "NBR 14.653 da ABNT" },
 ];
 
