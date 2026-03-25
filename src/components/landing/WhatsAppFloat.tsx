@@ -1,4 +1,4 @@
-import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
+import { defaultWhatsappLink } from "@/config/siteConfig";
 
 const WhatsAppIcon = ({ size = 28, className = "" }: { size?: number; className?: string }) => (
   <svg viewBox="0 0 32 32" width={size} height={size} className={className} fill="currentColor">
@@ -7,28 +7,30 @@ const WhatsAppIcon = ({ size = 28, className = "" }: { size?: number; className?
 );
 
 const WhatsAppFloat = () => {
-  const { open } = useWhatsAppModal();
+  const link = defaultWhatsappLink();
 
   return (
     <>
-      {/* Floating button - visible on all screens */}
-      <button
-        onClick={open}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="Solicitar Avaliação"
         className="fixed bottom-20 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110 md:bottom-6 md:right-6"
       >
         <WhatsAppIcon size={28} className="text-white" />
-      </button>
+      </a>
 
-      {/* Sticky bottom bar - mobile only */}
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card p-3 shadow-lg md:hidden">
-        <button
-          onClick={open}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3.5 text-base font-bold text-white"
         >
           <WhatsAppIcon size={20} />
           Solicitar Avaliação
-        </button>
+        </a>
       </div>
     </>
   );

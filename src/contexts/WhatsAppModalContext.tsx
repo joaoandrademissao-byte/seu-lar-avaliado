@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useCallback, ReactNode } from "react";
+import { createContext, useContext, useCallback, ReactNode } from "react";
+import { defaultWhatsappLink } from "@/config/siteConfig";
 
 interface WhatsAppModalContextType {
   isOpen: boolean;
@@ -15,12 +16,13 @@ export const useWhatsAppModal = () => {
 };
 
 export const WhatsAppModalProvider = ({ children }: { children: ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const open = useCallback(() => setIsOpen(true), []);
-  const close = useCallback(() => setIsOpen(false), []);
+  const open = useCallback(() => {
+    window.open(defaultWhatsappLink(), "_blank", "noopener,noreferrer");
+  }, []);
+  const close = useCallback(() => {}, []);
 
   return (
-    <WhatsAppModalContext.Provider value={{ isOpen, open, close }}>
+    <WhatsAppModalContext.Provider value={{ isOpen: false, open, close }}>
       {children}
     </WhatsAppModalContext.Provider>
   );
