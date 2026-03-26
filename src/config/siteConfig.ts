@@ -12,7 +12,7 @@ export const siteConfig = {
   regiao: "São José do Rio Preto e região",
   prazo: "72 horas após a vistoria do imóvel",
   
-  whatsapp: "5517991697859",
+  whatsapp: "5514996681221",
 
   /** Mensagens pré-preenchidas para WhatsApp */
   mensagens: {

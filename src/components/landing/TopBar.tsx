@@ -1,4 +1,5 @@
-import { siteConfig, defaultWhatsappLink } from "@/config/siteConfig";
+import { siteConfig } from "@/config/siteConfig";
+import { useWhatsAppModal } from "@/contexts/WhatsAppModalContext";
 import logoCompleta from "@/assets/logo_completa_sem_bg.png";
 
 const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
@@ -8,6 +9,7 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 );
 
 const TopBar = () => {
+  const { open } = useWhatsAppModal();
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -15,15 +17,13 @@ const TopBar = () => {
           <img src={logoCompleta} alt="Andrade Missão Engenharia" className="h-10 w-auto" />
           <span className="hidden text-xs font-medium text-muted-foreground sm:inline-block border-l border-border pl-3">CREA {siteConfig.crea}</span>
         </div>
-        <a
-          href={defaultWhatsappLink()}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={open}
           className="hidden items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90 sm:inline-flex"
         >
           <WhatsAppIcon size={18} />
           Solicitar Avaliação
-        </a>
+        </button>
       </div>
     </header>
   );
