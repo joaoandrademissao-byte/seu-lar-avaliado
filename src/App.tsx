@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Obrigado from "./pages/Obrigado";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
+import Proposta from "./pages/Proposta";
 import { WhatsAppModalProvider } from "@/contexts/WhatsAppModalContext";
 import WhatsAppModal from "@/components/landing/WhatsAppModal";
 import { useEffect } from "react";
