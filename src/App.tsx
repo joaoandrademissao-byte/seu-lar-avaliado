@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Obrigado from "./pages/Obrigado";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
+import Proposta from "./pages/Proposta";
 import { WhatsAppModalProvider } from "@/contexts/WhatsAppModalContext";
 import WhatsAppModal from "@/components/landing/WhatsAppModal";
 import { useEffect } from "react";
@@ -38,6 +39,7 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/obrigado" element={<Obrigado />} />
               <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+              <Route path="/proposta" element={<Proposta />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
